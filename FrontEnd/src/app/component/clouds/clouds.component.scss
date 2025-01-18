@@ -1,0 +1,43 @@
+.clouds {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    z-index: 10;
+  }
+  
+  .cloud {
+    position: absolute;
+    animation: float 30s linear infinite;
+    opacity: 0.8;
+    width: 120px;
+  }
+  
+  .cloud1 {
+    top: 10%;
+    left: -15%;
+    animation-duration: 25s;
+  }
+  
+  .cloud2 {
+    top: 40%;
+    left: 20%;
+    animation-duration: 30s;
+  }
+  
+  .cloud3 {
+    top: 60%;
+    left: -30%;
+    animation-duration: 35s;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(120vw);
+    }
+  }
