@@ -11,7 +11,7 @@ L'application a été développée en prenant en compte l'accessibilité, en opt
   <img src="FrontEnd/result.png" alt="Informations sur la meteo de la ville" width="100%" />
 </div>
 
-## Technologies used 
+## Technologies utilisées
 - **Angular 18**
 - **HTML5** 
 - **SCSS** 
@@ -21,17 +21,17 @@ L'application a été développée en prenant en compte l'accessibilité, en opt
 - **Axe DevTools**
 - **Swagger**
 
-## Key Features
+## Fonctionalités
 - **Rentrer le nom d'une ville: les utilisateurs peuvent rentrer le nom d'une ville afin d'avoir les prédictions méteo sur les cinq prochains jours dans cette ville.**
 - **Page resultat: Après avoir rentré le nom de la ville et cliqué sur l'icône de recherche, l'utilisateur peux viualiser les informations méteo.**
 - **Bouton retour: En cliquant sur l'icone de retour, l'utilisateur reviens sur la page d'accueil et peut donc rentrer le nom d'une autre villle.**
 
-## Installation and Usage
+## Installation et Usage
 Node.js(v22.3.0) and npm installed for the frontend.
 JDK 15+ for the Spring Boot backend.
 An IDE like VSCode or IntelliJ IDEA to edit the code.
 
-From your command line, first clone FevFolio:
+From your command line, first clone Mon appli meteo:
 
 ```bash
 # Clone this repository
