@@ -11,6 +11,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { HomeService } from './services/home.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -18,7 +20,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     AppComponent,
     CloudsComponent,
     HomeComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     MatButtonModule,
@@ -27,9 +29,11 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     MatIconModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
+    HomeService,
     provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]

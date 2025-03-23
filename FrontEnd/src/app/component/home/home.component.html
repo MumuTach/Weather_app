@@ -1,54 +1,46 @@
-<div class="phone-screen">
-  <!---mat-form-field appearance="outline" class="search_field">
-    <mat-label>Enter a city</mat-label>
-    <input matInput placeholder="City...">
-    <button mat-icon-button matSuffix>
-      <mat-icon>search</mat-icon>
-    </button>  
-  </mat-form-field>
+<div class="phone-screen" [ngClass]="{'background-image': !weatherData}">
+  <section class="home-container">
+    <mat-form-field appearance="outline" class="search_field" *ngIf="!weatherData">
+      <mat-label for="city">Enter a city</mat-label>
+      <input matInput id="city" type="text" placeholder="City..." [(ngModel)]="city" aria-labelledby="city">
+      <button mat-icon-button matSuffix (click)="getWeather()" aria-label="Search for weather">
+        <mat-icon>search</mat-icon>
+      </button>  
+    </mat-form-field>
+  </section>
 
-  <div class="weather-container">
-    <img src="clouds_sun.png" alt="Cloud and Sun" class="weather-icon">
-    <h1 class="weather-title">Weather App</h1>
-  </div-->
+  <section class="result-screen" *ngIf="weatherData">
+    <div class="result-header">
+      <div class="location-info">
+        <img src="position.png" alt="Location Icon" class="location-icon">
+        <span class="location-name">{{ weatherData.name }}</span>
+      </div>
 
-  <div class="result-screen">
-    <!-- Icône localisation + ville -->
-    <div class="location-info">
-      <img src="position.png" alt="Location Icon" class="location-icon">
-      <span class="location-name">location</span>
+      <div class="spacer"></div>
+
+      <button mat-icon-button class="back-button" (click)="goBack()" aria-label="Back to previous page">
+        <mat-icon>arrow_back</mat-icon> 
+      </button>   
     </div>
 
-    <!-- Image météo -->
     <div class="weather-image">
-      <img src="clouds_sun.png" alt="Weather Image" class="weather-icon-large">
+      <img [src]="'http://openweathermap.org/img/wn/' + weatherData.weather[0].icon + '.png'" alt="Weather Image for actual meteo" class="weather-icon-large">
     </div>
 
-    <!-- Température -->
     <div class="temperature">
-      22°C
+      {{ weatherData.main.temp}}°C
     </div>
 
     <!-- Titre pour le type de temps -->
-    <h2 class="weather-description">Cloudy</h2>
+    <h1 class="weather-description">{{ weatherData.weather[0].description }}</h1>
 
     <!-- Prévisions météo -->
     <div class="forecast">
-      <div class="forecast-item">
-        <img src="clouds_sun.png" alt="Weather icon" class="forecast-icon">
-        <span class="day">Today</span>
-        <span class="date">20/12</span>
-      </div>
-      <div class="forecast-item">
-        <img src="clouds_sun.png" alt="Weather icon" class="forecast-icon">
-        <span class="day">Monday</span>
-        <span class="date">20/12</span>
-      </div>
-      <div class="forecast-item">
-        <img src="clouds_sun.png" alt="Weather icon" class="forecast-icon">
-        <span class="day">Tuesday</span>
-        <span class="temp">18/10</span>
+      <div class="forecast-item" *ngFor="let item of forecastData">
+        <img [src]="'http://openweathermap.org/img/wn/' + item.weather[0].icon +'.png'" alt="Weather icon for everyday's meteo" class="forecast-icon">
+        <span class="day">{{ item.dt_txt | date:'EEEE' }}</span>
+        <span class="temp">{{item.main.temp}}°C</span>
       </div>
     </div>
-  </div>
+  </section>
 </div>
