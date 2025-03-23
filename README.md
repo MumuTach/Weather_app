@@ -9,6 +9,9 @@ L'application a été développée en prenant en compte l'accessibilité, en opt
   <img src="FrontEnd/home.png" alt="Page d'acceuil" width="100%" />
   <br>
   <img src="FrontEnd/result.png" alt="Informations sur la meteo de la ville" width="100%" />
+  <p>
+    L'analyse avec l'outil Axe DevTools nous permet de constater que notre application est bien accesssible🙂
+  </p>
 </div>
 
 ## Technologies utilisées
